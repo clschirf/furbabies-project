@@ -1,0 +1,8 @@
+build
+coverage
+.next
+next.config.js
+.vscode
+public
+node_modules
+.eslintrc.json
