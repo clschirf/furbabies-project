@@ -15,8 +15,9 @@ export interface Furbaby {
   sex: keyof typeof GenderCodes;
   species: keyof typeof Species;
   breed: string;
+  photoUri?: string;
   dob?: string;
-  color: string;
+  color?: string;
 }
 
 const furbabies: Array<Furbaby> = [
@@ -26,8 +27,9 @@ const furbabies: Array<Furbaby> = [
     sex: 'F',
     species: 'CAT',
     breed: 'Domestic Shorthair',
+    photoUri: '/lucy.jpeg',
     dob: '2012-05-20',
-    color: 'Grey tabby',
+    color: 'Calico',
   },
   {
     id: 2,
@@ -35,6 +37,7 @@ const furbabies: Array<Furbaby> = [
     sex: 'M',
     species: 'DOG',
     breed: 'Labrador',
+    photoUri: '/charlie.jpeg',
     dob: '2018-3-09',
     color: 'Chocolate',
   },
@@ -43,9 +46,9 @@ const furbabies: Array<Furbaby> = [
     name: 'Beau',
     sex: 'M',
     species: 'DOG',
+    photoUri: '/beau.jpeg',
     breed: 'Beagle',
     dob: '2021-07-12',
-    color: 'Grey tabby',
   },
   {
     id: 4,
@@ -53,6 +56,7 @@ const furbabies: Array<Furbaby> = [
     sex: 'F',
     species: 'CAT',
     breed: 'Siamese',
+    photoUri: '/mishmish.jpeg',
     dob: '2012-05-20',
     color: 'Seal point',
   },
@@ -71,6 +75,7 @@ const furbabies: Array<Furbaby> = [
     sex: 'M',
     species: 'CAT',
     breed: 'Maine Coon',
+    photoUri: '/milo.jpeg',
     dob: '2019-04-28',
     color: 'Silver tabby',
   },
@@ -96,7 +101,7 @@ const furbabies: Array<Furbaby> = [
 
 export const getAllFurbabies = () => {
   return new Promise(resolve =>
-    resolve(furbabies.map(f => ({ id: f.id, name: f.name }))),
+    resolve(furbabies.map(f => ({ id: f.id, name: f.name, photoUri: f.photoUri }))),
   );
 };
 
