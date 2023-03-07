@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import styled from '@emotion/styled';
 import Container from '@mui/material/Container';
+import Image from 'next/image';
 import PetsIcon from '@mui/icons-material/Pets';
 
 import { getAllFurbabies, Furbaby } from '@/apis/furbaby-api';
@@ -50,13 +51,38 @@ export default function Home() {
     border: 1px solid black;
   `;
 
+  const FurbabyPhoto = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+  `;
+
+  const generateFurbabyImage = (f: Furbaby) => {
+    if (f.photoUri) {
+      return (
+        <Image
+          src={f.photoUri}
+          alt={`Photo of ${f.name}!`}
+          width={200}
+          height={132}
+        />
+      );
+    }
+
+    return <PetsIcon />;
+  };
+
   const generateFurbabyCards = () => {
     return furbabies.map((f: Furbaby) => {
       return (
         <FurbabyCard key={f.id}>
-          <div>
-            <PetsIcon />
-          </div>
+          <FurbabyPhoto>{generateFurbabyImage(f)}</FurbabyPhoto>
           <h2>{f.name}</h2>
         </FurbabyCard>
       );
