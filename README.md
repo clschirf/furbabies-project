@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Users can see list of which animals are up for adoption
 	- name
 	- picture
-- [-] Users can drill into see details of a particular animal
+- [ ] Users can drill into see details of a particular animal
 	[x] name
 	[x] picture
 	[x] breed
