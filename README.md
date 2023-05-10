@@ -23,13 +23,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Users can see list of which animals are up for adoption
 	- name
 	- picture
-- [ ] Users can drill into see details of a particular animal
-	* name
-	* picture
-	* breed
-	* age
-	* NICE TO HAVE: description, personality traits
-	* NICE TO HAVE: previous adoption history
+- [-] Users can drill into see details of a particular animal
+	[x] name
+	[x] picture
+	[x] breed
+	[ ] age
+	[ ] NICE TO HAVE: description, personality traits
+	[ ] NICE TO HAVE: previous adoption history
 - [ ] Users can see which animals are no longer up for adoption 
 	* greyed out image
 	* adoption date shown
